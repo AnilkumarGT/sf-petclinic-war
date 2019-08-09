@@ -1,8 +1,7 @@
-FROM openjdk:11-jdk-slim
+FROM tomcat:9-jdk8-openjdk-slim
 LABEL author="GT"
 
-ARG JAR=spring-framework-petclinic-5.1.5.jar
-COPY target/$JAR /app.jar
+ARG WAR=spring-framework-petclinic-5.1.5.war 
+COPY target/$WAR /usr/local/tomcat/webapps/petclinic.war 
 EXPOSE 8080
-
-ENTRYPOINT ["java","-jar","/app.jar"]
+CMD ["catalina.sh", "run"]
