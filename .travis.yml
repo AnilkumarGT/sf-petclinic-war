@@ -11,7 +11,6 @@ script:
 cache:
   directories:
     - '$HOME/.m2/repository'
-    - '$HOME/.sonar/cache'
 
 after_success:
   - export IMAGE_NAME=gtct/petclinic
