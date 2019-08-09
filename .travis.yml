@@ -13,7 +13,7 @@ cache:
     - '$HOME/.m2/repository'
 
 after_success:
-  - export IMAGE_NAME=gtct/sp-petclinic-war
+  - export IMAGE_NAME=gtct/sf-petclinic-tomcat-war
   - export TAG=$TRAVIS_BUILD_NUMBER
   - docker build -t $IMAGE_NAME:$TAG .
   - docker login -u $DH_USER -p $DH_PASS
