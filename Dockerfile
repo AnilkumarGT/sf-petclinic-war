@@ -4,4 +4,4 @@ LABEL author="GT"
 ARG WAR=petclinic.war 
 COPY target/$WAR /usr/local/tomcat/webapps/petclinic.war 
 EXPOSE 8080
-CMD ["catalina.sh", "run"]
+ENTRYPOINT ["catalina.sh", "run"]
